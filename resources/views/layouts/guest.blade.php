@@ -20,6 +20,12 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarText">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                            {{-- @if (utente NON È autenticato  ) --}}
+                            {{-- ALLORA: @guest --}}
+
+                            {{-- @auth è EQUIVALENTE DI: --}}
+                            {{-- @if (utente È autenticato  ) --}}
                             @auth
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('dashboard') }}">Dashboard</a>
