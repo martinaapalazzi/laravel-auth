@@ -38,9 +38,10 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Post $post)
+    public function show(string $slug)
     {
-        //
+        $post = Post::where('slug', $slug)->firstOrFail();
+        return view('admiin.posts.show', compact('post'));
     }
 
     /**

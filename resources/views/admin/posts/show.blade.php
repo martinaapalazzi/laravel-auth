@@ -12,7 +12,12 @@
                     </h1>
                     
                     <div>
-                        
+                        <h3>
+                            {{ $post->slug }}
+                        </h3>
+                        <p>
+                            {{ $post->content }}
+                        </p>
                     </div>
 
                 </div>
