@@ -34,6 +34,20 @@
                                                 Show
                                             </a>
                                         </td>
+                                        <td>
+                                            <a href="{{ route('admin.posts.edit', ['post' => $post->slug]) }}" class="btn btn-warning">
+                                                Edit
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <form 
+                                            onsubmit="return confirm('Are you sure you want to delete this post?');"
+                                            class="d-inline-block" action="{{ route('admin.posts.destroy', ['post' => $post->id]) }}"  method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button  type="submit" class="btn btn-danger">Delete</button>
+                                            </form>
+                                        </td>
                                     </tr>
                                 @endforeach
                             </tbody>
