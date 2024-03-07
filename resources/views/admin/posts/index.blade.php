@@ -20,6 +20,8 @@
                                     <th scope="col">Slug</th>
                                     <th scope="col">Created at</th>
                                     <th scope="col">Show post</th>
+                                    <th scope="col">edit post</th>
+                                    <th scope="col">Delete post</th>
                                 </tr>
                             </thead>
                             <tbody>
