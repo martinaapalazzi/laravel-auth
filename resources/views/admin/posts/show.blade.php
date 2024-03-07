@@ -20,6 +20,11 @@
                         </p>
                     </div>
 
+                    <div class="mb-4">
+                        <a href="{{ route('admin.posts.index') }}" class="btn btn-primary">
+                            Go back to Posts Page
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
