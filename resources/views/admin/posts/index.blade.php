@@ -10,6 +10,12 @@
                     <h1 class="text-center text-success">
                         All the posts
                     </h1>
+
+                    <div class="m-4">
+                        <a href="{{ route('admin.posts.create') }}" class="btn btn-xs btn-primary">
+                            add new post
+                        </a>
+                    </div>
                     
                     <div>
                         <table class="table">

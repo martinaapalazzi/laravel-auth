@@ -36,6 +36,7 @@ class PostController extends Controller
             'title' => 'required|max:64',
             'slug' => 'nullable|max:1000',
             'content' => 'nullable|max:1000',
+        //   chiavi = name="" degli input 
         ]);
 
         $post = Post::create($validationResult);
@@ -64,9 +65,19 @@ class PostController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Post $post)
+    public function update(Request $request, string $slug)
     {
-        //
+        $post = Post::where('slug', $slug)->firstOrFail();
+        $validationResult = $request->validate([
+            'title' => 'required|max:64',
+            'slug' => 'nullable|max:1000',
+            'content' => 'nullable|max:1000',
+        //   chiavi = name="" degli input 
+        ]);
+
+        $post->update($validationResult);
+
+        return redirect()->route('admin.posts.show', ['post' => $post->slug]);
     }
 
     /**
